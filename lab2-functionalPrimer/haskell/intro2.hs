@@ -1,7 +1,7 @@
 module Intro2 where
 -- test Comment
 -- String algebra:
-name = "Alice"
+name = "Alice Changed"
 -- "if" has a special syntax but otherwise a typed version of Lisp's "if":
 name2 = if name /= "" then name else "no name"
 

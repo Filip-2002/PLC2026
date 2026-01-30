@@ -1,9 +1,21 @@
---create inpFunc
-inpFunc = [1..5] 
-
---Define applicatorFunc
-applicatorFunc inpFunc s = if s=='s' then sum inpFunc else (sum inpFunc)/5  
-
-main = do
-    let result = applicatorFunc inpFunc 'a' --Call applicatorFunc with inpFunc and 'a' as args
-    putStrLn("sum = " ++ show(result))
+function arrFunc(a, b){
+  let arr = [];
+  for (let i = a; i<=b; i++) {
+    arr.push(i);
+  }
+  return arr;  
+}
+function applicatorFunc(inpFunc, s, a, b){
+  if(s=='s'){
+    const arr = inpFunc(a, b);    
+    let sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    return sum;
+  }
+  else{    
+    const arr = inpFunc(a, b);
+    let sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    return sum/(b-a+1);
+  }
+}
+let x = applicatorFunc(arrFunc, 'a', 1, 10);
+console.log(x);
